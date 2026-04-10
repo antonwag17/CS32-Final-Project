@@ -26,7 +26,7 @@ CAREER_PATHS = [
 ]
 
 
-# ── step 1: collect student profile via questionnaire ──
+# ─- step 1: collect student profile via questionnaire ──
 def build_student_vector():
     print("\nRate yourself from 0 (not at all) to 5 (very much) on each quality.\n")
     vector = []
