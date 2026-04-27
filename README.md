@@ -1,99 +1,42 @@
-# CS32 Final Project — Student-to-Profession Matching Algorithm
+# Career-Match
 
-A Python-based algorithm that matches students to professions and roles based on their interests, personal attributes, and academic performance metrics.
+A career recommender for college students. The student answers a 20-question survey; the tool maps their answers into a 10-dimensional feature vector, assigns them to the nearest career archetype, and identifies the single best-matching career within that archetype.
 
----
+## How it works
 
-## Overview
+1. Student answers 20 questions rated 0–5
+2. Answers are converted into a 10-dim vector (analytical, creative, people-facing, independent, risk tolerance, prestige, structured, impact, technical depth, entrepreneurial)
+3. The vector is compared against 10 archetype centroids (computed by averaging the career vectors in each group)
+4. The student is assigned to the nearest archetype
+5. Within that archetype, the closest individual career is found and displayed
 
-This project implements a matching system that takes student profile data as input and recommends suitable professions or career roles. The algorithm analyzes multiple dimensions of a student's profile — including self-reported interests, personality/attribute scores, and measurable academic performance — to produce a ranked list of career matches.
-
----
-
-## Features
-
-- Collects and processes student interest data across multiple domains
-- Incorporates personal attribute weightings (e.g., creativity, analytical thinking, leadership)
-- Uses academic performance metrics to refine match quality
-- Produces a ranked list of profession/role recommendations per student
-- Modular design for easy extension with new professions or scoring criteria
-
----
-
-## Algorithm Design
-
-The matching algorithm works in three stages:
-
-1. **Profile Building** — Student data (interests, attributes, GPA/grades by subject) is collected and normalized into a standard profile vector.
-2. **Scoring** — Each profession in the database is scored against the student's profile using a weighted similarity function. Weights reflect the relative importance of interests, attributes, and performance for each profession.
-3. **Ranking** — Professions are sorted by their match score and returned as an ordered list of recommendations.
-
----
-
-## Project Structure
-
-```
-CS32-Final-Project/
-├── README.md
-└── ...                  # source files (to be added)
-```
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.8+
-
-### Installation
+## Setup
 
 ```bash
-git clone https://github.com/antonwag17/CS32-Final-Project.git
-cd CS32-Final-Project
+pip install -r requirements.txt
+python3 app.py
 ```
 
-### Usage
+## Project structure
 
-```bash
-python main.py
+```
+app.py                  — main CLI application
+questionnaire.py        — 20-question survey and answer-to-vector mapping
+categorize_careers.py   — hardcoded career vectors, archetype definitions, centroid computation
+requirements.txt
 ```
 
----
+## Archetypes
 
-## Input Format
-
-Student profiles are expected to include the following fields:
-
-| Field | Type | Description |
-|---|---|---|
-| `interests` | list of str | Subject/domain areas the student is interested in |
-| `attributes` | dict | Named attribute scores (e.g., `{"creativity": 8, "leadership": 6}`) |
-| `grades` | dict | Subject-level performance scores (e.g., `{"math": 92, "english": 85}`) |
-
----
-
-## Output Format
-
-The algorithm returns a ranked list of profession matches:
-
-```python
-[
-    {"profession": "Software Engineer", "score": 0.91},
-    {"profession": "Data Analyst",      "score": 0.87},
-    {"profession": "UX Designer",       "score": 0.74},
-    ...
-]
-```
-
----
-
-## Authors
-
-- Anton Wagner — [antonwag17](https://github.com/antonwag17)
-
----
-
-## Course
-
-CS32 — Final Project
+| # | Archetype |
+|---|---|
+| 0 | Consulting |
+| 1 | Finance |
+| 2 | Technology |
+| 3 | Academia / Research |
+| 4 | Engineering |
+| 5 | Public Service / Nonprofit |
+| 6 | Arts / Entertainment |
+| 7 | Government / Politics |
+| 8 | Entrepreneurship |
+| 9 | Law |
