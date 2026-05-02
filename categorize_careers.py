@@ -26,6 +26,19 @@ ARCHETYPE_NAMES = {
     9: "Law",
 }
 
+ARCHETYPE_DESCRIPTIONS = {
+    0: "Fast-paced client work, cross-industry problem-solving, and career prestige.",
+    1: "Data-driven, high-stakes financial markets and top-tier compensation.",
+    2: "Building software products, systems, and data solutions at scale.",
+    3: "Deep intellectual inquiry, publishing research, and advancing human knowledge.",
+    4: "Designing and building physical and technical systems that shape the world.",
+    5: "Improving lives through healthcare, advocacy, and community work.",
+    6: "Expressing ideas through writing, visual media, design, or performance.",
+    7: "Shaping policy, diplomacy, and the institutions that govern society.",
+    8: "Creating new ventures, taking calculated risks, and building from scratch.",
+    9: "Navigating legal systems to advise, advocate, and uphold justice.",
+}
+
 # (title, cluster_id, [analytical, creative, people_facing, independent,
 #                      risk_tolerance, prestige, structured, impact, technical_depth, entrepreneurial])
 # Scores are 1-5.
@@ -42,11 +55,11 @@ CAREERS: list[tuple[str, int, list[int]]] = [
     ("Private Equity Associate",   1, [5, 2, 3, 2, 4, 5, 3, 2, 4, 4]),
     ("Hedge Fund Analyst",         1, [5, 2, 2, 3, 5, 5, 3, 1, 4, 3]),
     ("Portfolio Manager",          1, [5, 2, 3, 3, 4, 4, 3, 2, 4, 3]),
-    ("Venture Capitalist",         1, [4, 3, 4, 3, 5, 5, 2, 3, 3, 5]),
+    ("Venture Capitalist (Finance)", 1, [4, 3, 4, 3, 5, 5, 2, 3, 3, 5]),
     ("Financial Analyst",          1, [4, 2, 3, 3, 3, 4, 4, 2, 3, 2]),
     # Technology (2)
     ("Software Engineer",         2, [5, 3, 3, 4, 3, 4, 3, 3, 5, 3]),
-    ("Product Manager",           2, [4, 4, 4, 3, 3, 4, 3, 3, 3, 4]),
+    ("Technical Product Manager",  2, [4, 4, 4, 3, 3, 4, 3, 3, 3, 4]),
     ("Data Scientist",            2, [5, 3, 2, 4, 2, 4, 3, 3, 5, 2]),
     ("Machine Learning Engineer", 2, [5, 3, 2, 4, 3, 4, 3, 3, 5, 3]),
     ("Technical Program Manager", 2, [4, 3, 4, 2, 3, 3, 4, 3, 4, 3]),
@@ -88,11 +101,11 @@ CAREERS: list[tuple[str, int, list[int]]] = [
     ("Political Campaign Manager", 7, [4, 4, 5, 3, 4, 4, 3, 4, 2, 4]),
     # Entrepreneurship (8)
     ("Startup Founder / CEO",        8, [4, 4, 4, 5, 5, 5, 2, 4, 3, 5]),
-    ("Venture Capitalist",           8, [4, 3, 4, 3, 5, 5, 2, 3, 3, 5]),
+    ("Venture Capitalist (Startup)",  8, [4, 3, 4, 3, 5, 5, 2, 3, 3, 5]),
     ("Business Development Manager", 8, [3, 3, 4, 3, 3, 3, 3, 3, 2, 4]),
     ("General Manager",              8, [4, 3, 4, 3, 3, 4, 3, 3, 3, 3]),
     ("Social Entrepreneur",          8, [3, 4, 4, 4, 4, 3, 2, 5, 2, 5]),
-    ("Product Manager",              8, [4, 4, 4, 3, 3, 4, 3, 3, 3, 4]),
+    ("Growth Product Manager",       8, [4, 4, 4, 3, 3, 4, 3, 3, 3, 4]),
     # Law (9)
     ("Corporate Attorney",           9, [4, 3, 4, 2, 3, 5, 4, 2, 4, 2]),
     ("Public Defender",              9, [4, 3, 4, 3, 3, 3, 4, 5, 3, 2]),
