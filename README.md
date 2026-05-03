@@ -17,13 +17,13 @@ A career recommender for college students. The student answers a 20-question sur
 
 ```bash
 pip install -r requirements.txt
-streamlit run streamlit_app.py
+streamlit run app.py
 ```
 
 ## Project structure
 
 ```
-streamlit_app.py      — main web application (Streamlit)
+app.py      — main web application (Streamlit)
 questionnaire.py      — 20-question survey, feature definitions, answer-to-vector mapping
 categorize_careers.py — hardcoded career vectors, archetype definitions, centroid computation
 requirements.txt      — Python dependencies (numpy, streamlit, plotly)
@@ -48,5 +48,5 @@ requirements.txt      — Python dependencies (numpy, streamlit, plotly)
 
 This project used Claude Code. Specifically:
 
-- **UI/UX design**: Claude wrote the full Streamlit front-end (`streamlit_app.py`), including all CSS styling, the radar chart, and the session-state flow between the survey, edge-case refinement, and results screens.
+- **UI/UX design**: Claude wrote the full Streamlit front-end, including all CSS styling, the radar chart, and the session-state flow between the survey, edge-case refinement, and results screens.
 - **Code review and cleanup**: Claude audited the codebase for dead code, duplicate definitions, and unused imports, and removed them.
